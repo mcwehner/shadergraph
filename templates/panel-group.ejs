@@ -1,0 +1,21 @@
+<div class="panel-group docked left">
+    <header>
+        <h1></h1>
+    </header>
+    
+    <nav>
+        <ul>
+        <% $.each(panels, function (i, panel) { %>
+            <li>
+                <h2><%= panel.name %></h2>
+            </li>
+        <% }) %>
+        </ul>
+    </nav>
+    
+    <section class="panels">
+        <% $.each(panels, function (i, panel) { %>
+            <section class="panel" data-name="<%= panel.name %>"></section>
+        <% }) %>
+    </section>
+</div>

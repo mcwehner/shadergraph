@@ -1,0 +1,73 @@
+.panel-group {
+    display: inline-block;
+    
+    font-size: 0.625em;
+    text-shadow: 0 -1px 0 #262626;
+    
+    background-color: #4a4a4a;
+    box-shadow: 0 1px 0 #5d5d5d inset, 0 0 0 1px #262626;
+
+    &.floating {
+        header {
+            border-top-left-radius: 0.25em;
+            border-top-right-radius: 0.25em;
+        }
+    }
+    
+    &.docked {
+        position: absolute;
+        
+        &.left, &.right { height: 100%; }
+        &.top, &.bottom { width: 100%; }
+        
+        &.left, &.right, &.top { top: 1px; }
+        
+        &.right { right: 0; }
+        &.bottom { bottom: 0; }
+    }
+    
+    header {
+        padding: 0.25em 0.5em;
+        
+        background-image: -webkit-linear-gradient(top, #353535, #2c2c2c);
+        box-shadow: 0 1px 0 0 #444444 inset, 0 0 0 1px #262626;
+    }
+    
+    nav {
+        padding-right: 2em;
+        
+        background-image: -webkit-linear-gradient(top, #353535, #313131);
+        
+        box-shadow: 0 1px 0 0 #444444 inset,
+                    0 0 0 1px #262626,
+                    0 -1px 0 #262626 inset
+                    ;
+        
+        li {
+            display: inline-block;
+            padding: 0.25em 0.75em;
+
+            background-color: #4a4a4a;
+            
+            box-shadow: 0 1px 0 #5d5d5d inset,
+                        1px 0 0 #262626,
+                        0 1px 0 #4a4a4a
+                        ;
+        }
+    }
+    
+    .panels {
+        padding: 0.5em 0.75em;
+        
+        box-shadow: 0 1px 0 #5d5d5d inset;
+    }
+    
+    .control-group {
+        padding: 1em 1em 0 1em;
+        margin-top: 1em;
+        
+        box-shadow: 0 1px 0 #5d5d5d inset,
+                    0 -1px 0 #262626
+                    ;
+    }
+}
