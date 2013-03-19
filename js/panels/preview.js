@@ -1,9 +1,10 @@
 define([
-    "panel",                                // Panel
-    "text!templates/preview-panel.ejs",     // template
+    "./panel",                                  // Panel
     
-    "text!shaders/three-test/test.vert",    // testVertexShader
-    "text!shaders/three-test/test.frag"     // testFragmentShaders
+    "text!templates/panels/preview-panel.ejs",  // template
+    
+    "text!shaders/three-test/test.vert",        // testVertexShader
+    "text!shaders/three-test/test.frag"         // testFragmentShaders
 ],
 function (Panel, template, testVertexShader, testFragmentShader) {
     function PreviewPanel (options) {
@@ -93,6 +94,7 @@ function (Panel, template, testVertexShader, testFragmentShader) {
         parentElement.append( $(this.renderer.domElement) );
         parentElement.append( new EJS({ text: template }).render({}) );
         
+        // Primitive translation
         $("canvas", parentElement).on("mousedown", function (mousedownEvent) {
             var rotateX = self.primitive.rotation.x;
             var rotateY = self.primitive.rotation.y;
@@ -120,6 +122,7 @@ function (Panel, template, testVertexShader, testFragmentShader) {
             return false;
         });
         
+        // Tumble animation on/off
         $(".control-group input[name=tumble]", parentElement).click(function () {
             self.tumbleEnabled = $(this).prop("checked");
         });

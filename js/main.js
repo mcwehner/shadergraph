@@ -15,14 +15,25 @@ define([
 ],
 function () {
     require([
-        "panel-group",
-        "preview"
+        "panels/panel-group",   // PanelGroup
+        "panels/preview",       // PreviewPanel
+        "panels/editor"         // EditorPanel
     ],
-    function (PanelGroup, PreviewPanel) {
-        var panelGroup = new PanelGroup([
+    function (PanelGroup, PreviewPanel, EditorPanel) {
+        // Prevent text selection
+        document.onselectstart = function() {
+          return false;
+        };
+        
+        var propertiesPanelGroup = new PanelGroup([
             new PreviewPanel()
         ]);
         
-        panelGroup.render( $("body") );
+        var shaderPanelGroup = new PanelGroup([
+            new EditorPanel()
+        ]);
+        
+        propertiesPanelGroup.render( $("body") );
+        shaderPanelGroup.render( $("body") );
     });
 });
