@@ -1,10 +1,10 @@
 define([
-    "./panel",                                  // Panel
+    "./panel",                              // Panel
     
-    "text!templates/panels/preview-panel.ejs",  // template
+    "text!templates/panels/preview.ejs",    // template
     
-    "text!shaders/three-test/test.vert",        // testVertexShader
-    "text!shaders/three-test/test.frag"         // testFragmentShaders
+    "text!shaders/three-test/test.vert",    // testVertexShader
+    "text!shaders/three-test/test.frag"     // testFragmentShaders
 ],
 function (Panel, template, testVertexShader, testFragmentShader) {
     function PreviewPanel (options) {
@@ -32,7 +32,7 @@ function (Panel, template, testVertexShader, testFragmentShader) {
         this.renderer.setSize(this.options.width, this.options.height);
         
         this.animationEnabled = true;
-        this.tumbleEnabled    = true;
+        this.tumbleEnabled    = false;
         
         this.tumbleX = 0.01;
         this.tumbleY = 0.01;

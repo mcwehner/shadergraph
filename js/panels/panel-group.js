@@ -24,13 +24,14 @@ function (template) {
         }
         
         this.domElement = element;
-        this.domElement.css("z-index", ++PanelGroup.counter);
+        // this.domElement.css("z-index", ++PanelGroup.counter);
         
         $.each(this.panels, function (i, panel) {
             panel.render( $(".panel-group .panel[data-name='" + panel.name + "']") );
         });
         
         // Moving panel groups
+        /*
         $("header", this.domElement).on("mousedown", function (mousedownEvent) {
             var offset    = $(this).offset();
             var snapWidth = 30;
@@ -65,11 +66,12 @@ function (template) {
             
             return false;
         });
-
+        */
+        
         // Panel group focus
-        $(this.domElement).on("mouseup", function () {
-            self.domElement.css("z-index", ++PanelGroup.counter);
-        });
+        // $(this.domElement).on("mouseup", function () {
+        //     self.domElement.css("z-index", ++PanelGroup.counter);
+        // });
     };
     
     PanelGroup.prototype.float = function (x, y) {
